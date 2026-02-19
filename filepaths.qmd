@@ -1,0 +1,162 @@
+
+```{r}
+getwd()
+```
+
+```{r}
+list.dirs(path = ".", full.names = FALSE, recursive = FALSE)
+```
+
+```{r}
+WhatDayDidIWriteThis <- "Saturday"
+```
+
+```{r}
+TopSecretMeetingDay <- "Saturday"
+```
+
+```{r}
+TopSecretMeetingDay
+```
+
+```{r}
+TopSecretMeetingDay <- "Monday"
+```
+
+```{r}
+TopSecretMeetingDay
+```
+
+```{r}
+rm (TopSecretMeetingDay)
+```
+
+```{r}
+str(WhatDayDidIWriteThis <- "Saturday")
+```
+
+```{r}
+Fluorophores <- c("BV421", "FITC", "PE", "APC")
+```
+
+```{r}
+str (Fluorophores)
+```
+
+```{r}
+list.files()
+```
+
+```{r}
+list.files(path= "data", full.names = FALSE, recursive = FALSE)
+```
+
+```{r}
+NewFolderLocation <- file.path("data", "target2")
+```
+
+```{r}
+dir.create(path = NewFolderLocation)
+```
+
+```{r}
+list.files(path= "data/target", full.names = FALSE, recursive = FALSE)
+```
+
+```{r}
+FolderLocation <- file.path("data", "target")
+```
+
+```{r}
+FolderLocation
+```
+
+```{r}
+list.files(path= FolderLocation, full.names = FALSE, recursive = FALSE)
+```
+
+```{r}
+files <- list.files("data", pattern = ".fcs", full.names = FALSE, recursive = FALSE)
+```
+
+```{r}
+files
+```
+
+```{r}
+# install.packages ("stringr") # CRAN
+```
+
+```{r}
+install.packages("stringr")
+```
+
+```{r}
+library(stringr)
+```
+
+```{r}
+str_detect(files, "INF")
+```
+```{r}
+files [str_detect (files, "INF")]
+```
+
+```{r}
+Infants <- files[str_detect (files, "INF")]
+```
+
+```{r}
+NeedCoffee <- TRUE
+```
+
+```{r}
+if (NeedCoffee) {print ("Take a break")}
+```
+
+```{r}
+RowNumber <- 299
+```
+
+```{r}
+2 + RowNumber >300
+```
+
+```{r}
+if (2 + RowNumber > 3) {print ("Stop Iterating")}
+```
+```{r}
+FolderTarget3 <- file.path("data", "target3")
+```
+
+```{r}
+dir.exists(FolderTarget3)
+```
+
+```{r}
+if (!dir.exists(FolderTarget3)) {dir.create(FolderTarget3)}
+```
+
+```{r}
+file.copy(from = Infants, to = FolderTarget3)
+```
+
+```{r}
+getwd()
+```
+
+```{r}
+files_present <- list.files("data", full.names = TRUE, recursive = FALSE)
+```
+
+```{r}
+files_present
+```
+
+```{r}
+Infants <- files_present [str_detect(files_present, "INF")]
+```
+
+```{r}
+file.copy(from = Infants, to = FolderTarget3)
+```
