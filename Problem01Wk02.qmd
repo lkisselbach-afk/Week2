@@ -1,0 +1,58 @@
+---
+title: "Problem 1 Week 02"
+format: pdf
+embed-resources: true
+toc: true
+---
+
+# Folder path on USB drive
+
+```{r}
+USBFolderPath <- "D:/TargetFolder"
+```
+
+# Check if folder exists
+
+```{r}
+if (dir.exists(USBFolderPath)) {cat("Folder found on USB drive:", USBFolderPath, "\n")} else {cat("Folder not found.\n")}
+```
+
+# Remove old values
+
+```{r}
+rm ("ExternalDrive", "ExternalDriveFiles", "folder_path")
+```
+
+# Current path
+
+```{r}
+getwd()
+```
+
+# Copy folders and files from USB
+
+```{r}
+DestinationPath <- "c:/Users/lynnm/Documents/Week2"
+```
+
+# Check if source exists
+
+```{r}
+if (!dir.exists(USBFolderPath)) {stop("Source folder does not exist. Check USB path.")}
+```
+
+# Create destination folder if it doesn't exist
+
+```{r}
+if (!dir.exists(DestinationPath)) {dir.create(DestinationPath, recursive = TRUE)}
+```
+
+# Copy folder recursively
+
+```{r}
+success <- file.copy(from = USBFolderPath, to = DestinationPath, recursive = TRUE, copy.mode = TRUE, copy.date = TRUE)
+```
+
+```{r}
+if (success) {message("Copy completed successfully")} else {warning("Some files could not be copied.")}
+```

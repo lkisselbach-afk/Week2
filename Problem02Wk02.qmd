@@ -1,0 +1,24 @@
+---
+title: "Problem 2 Week 02"
+format: pdf
+embed-resources: true
+toc: true
+--- 
+
+# Problem 2
+
+In this session, we used list.files() with the “full.names argument” set to TRUE, as well as the basename() function to identify specific files. But what if you wanted a particular directory. Run list.files() with “full.names argument” and “recursive” argument set to TRUE, and then search online to find an R function that would retrieve the “” individual directory folders.
+
+```{r}
+list.files(path = "data", full.names = TRUE, recursive = TRUE)
+```
+
+# List Individual directory folders (not files)
+
+```{r}
+list.dirs(path = ".", full.names = TRUE, recursive = TRUE)
+```
+
+```{r}
+list
+```
